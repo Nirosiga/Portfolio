@@ -207,16 +207,10 @@ nav a {
 }
 /* ===== FIRST ROW MOBILE ===== */
 @media (max-width: 768px) {
-  .first-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .first-row .card {
-    width: 100%;
+  .gallery img {
+    pointer-events: none;
   }
 }
-
 .scroll-top {
   position: fixed;
   bottom: 30px;
