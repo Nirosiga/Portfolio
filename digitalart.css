@@ -206,9 +206,15 @@ nav a {
   }
 }
 /* ===== FIRST ROW MOBILE ===== */
-@media (max-width: 768px) {
-  .gallery img {
-    pointer-events: none;
+/* ===== FIRST ROW TABLET + MOBILE ===== */
+@media (max-width: 900px) {
+  .first-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .first-row .card {
+    width: 100%;
   }
 }
 .scroll-top {
