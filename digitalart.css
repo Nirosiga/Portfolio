@@ -120,8 +120,9 @@ nav a {
   }
 }
 @media (max-width: 768px) {
-  .gallery img {
-    pointer-events: none; /* empêche le clic */
+  .first-row img,
+  .rest-gallery img {
+    pointer-events: none;
   }
 }
 /* LIGHTBOX */
