@@ -1,0 +1,454 @@
+/* ================= RESET ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'tserraMont', Arial, sans-serif;
+  background: white;
+  color: #111;
+}
+
+/* ================= FONT ================= */
+
+@font-face {
+  font-family: 'COCO';
+  src: url('assets/font/Cocoscaca-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  gap: 20px;
+}
+
+/* Groupe logo + icônes */
+.logo-and-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre logo et icônes */
+}
+
+.logo {
+  font-family: 'COCO', sans-serif;
+  font-size: 2.4rem;
+  cursor: default;
+}
+
+/* Icônes */
+.header-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.header-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111;
+}
+/* ================= GALLERY ================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 40px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #eee;
+}
+
+.card img,
+.card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.card:hover img,
+.card:hover video {
+  transform: scale(1.02);
+}
+
+.card video {
+  pointer-events: none;
+}
+
+/* ================= OVERLAY ================= */
+
+.card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card .overlay p {
+  color: white;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* ================= FOOTER ================= */
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= MOTION PAGE ================= */
+
+
+/* PAGE */
+.motion-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+/* TITRES */
+.motion-title {
+  font-family: 'COCO', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.motion-subtitle {
+ max-width: 600px;
+  margin: 0 auto 80px;
+  text-align: center;
+  line-height: 1.6;
+  color: #666;
+  font-size: 1rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.title2 {
+  text-align: center;
+  font-family: 'COCO', sans-serif;
+  font-size: 24px;
+  margin: 40px 0 20px;
+}
+
+/* CENTRAGE PROJETS */
+.motion-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+/* BLOC VIDEO */
+.video-block {
+  width: 75%;
+  max-width: 900px;
+}
+
+/* WRAPPER RESPONSIVE (clé pour garder la même taille partout) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* ratio 16:9 */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  z-index: 999;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* TEXTE */
+.video-block p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* IMAGES */
+.image-block {
+  width: 75%;
+  max-width: 900px;
+}
+
+.image-block img {
+  width: 100%;
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .motion-page {
+    padding: 60px 20px 100px;
+  }
+
+  .video-block,
+  .image-block {
+    width: 100%;
+  }
+
+  .motion-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ================= 3D PROJECT PAGE ================= */
+
+/* ---------- PAGE LAYOUT ---------- */
+
+.project-page {
+max-width: 1400px;
+margin: 0 auto;
+padding: 80px 40px 140px;
+}
+
+/* ---------- HEADER ---------- */
+
+.project-header {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.project-header h1 {
+font-family: 'COCO', sans-serif;
+font-size: 3rem;
+}
+
+/* ---------- VIDEO ---------- */
+
+.project-hero {
+margin-bottom: 60px;
+}
+
+/* Container responsive 16:9 */
+.video-container {
+width: 100%;
+position: relative;
+padding-top: 56.25%;
+background: black;
+}
+
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0;
+display: block;
+}
+
+/* Description sous la vidéo */
+.project-meta {
+ max-width: 600px;
+  margin: 40px auto 80px;
+  text-align: center;
+  line-height: 1.6;
+  color: #666;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- GALLERY ---------- */
+
+.project-gallery {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.project-gallery img {
+width: 100%;
+display: block;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1000px) {
+.project-page {
+padding: 60px 30px 120px;
+}
+}
+
+@media (max-width: 700px) {
+.project-header h1 {
+font-size: 2.2rem;
+}
+
+.project-page {
+padding: 50px 20px 100px;
+}
+}
+
+/* ================= PRATIQUE PLASTIQUE PAGE ================= */
+
+.plastic-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+/* ---------- TITLE ---------- */
+
+.plastic-title {
+  font-family: 'COCO', sans-serif;
+  font-size: 3rem;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+
+.plastic-subtitle {
+   max-width: 600px;
+  margin: 0 auto 80px;
+  text-align: center;
+  line-height: 1.6;
+  color: #666;
+  font-size: 1rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- MASONRY GRID ---------- */
+
+.plastic-grid {
+  column-count: 4;
+  column-gap: 5px;
+}
+
+/* ---------- ITEMS ---------- */
+
+.plastic-item {
+  break-inside: avoid;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+/* ---------- IMAGES ---------- */
+
+.plastic-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f2f2f2;
+  transition: transform 0.35s ease;
+}
+
+/* ---------- HOVER (SUBTLE) ---------- */
+
+.plastic-item:hover img {
+  transform: scale(1.02);
+}
+
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1200px) {
+  .plastic-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .plastic-grid {
+    column-count: 2;
+  }
+
+  .plastic-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .plastic-grid {
+    column-count: 1;
+  }
+
+  .plastic-page {
+    padding: 60px 20px 100px;
+  }
+}
