@@ -29,7 +29,7 @@
 .project-meta {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: #777;
 }
 
