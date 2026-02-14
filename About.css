@@ -52,7 +52,7 @@ html, body {
   color: #666;
 
   /* Same style as your other pages */
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.07em;
 }
 
