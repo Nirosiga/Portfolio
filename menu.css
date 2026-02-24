@@ -252,7 +252,11 @@ nav a {
   width: 75%;
   max-width: 900px;
 }
-
+.image-block img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px; /* space between images */
+}
 .image-block img {
   width: 100%;
   display: block;
